@@ -25,9 +25,13 @@ type ConfigItem struct {
 	Tenant  string `param:"tenant"`
 	Appname string `param:"appname"`
 }
+type IndexedConfigItem struct {
+	Id      int `param:"id"`
+	ConfigItem ConfigItem
+}
 type ConfigPage struct {
 	TotalCount     int          `param:"totalCount"`
 	PageNumber     int          `param:"pageNumber"`
 	PagesAvailable int          `param:"pagesAvailable"`
-	PageItems      []ConfigItem `param:"pageItems"`
+	PageItems      []IndexedConfigItem `param:"pageItems"`
 }
